@@ -45,7 +45,7 @@ def Wind_power(
 
         """MONTHLY ANALYSIS"""
         monthsyear = []
-        groupyear = data["WindPower"][str(year)].groupby(pd.Grouper(freq="M"))
+        groupyear = data["WindPower"][str(year)].groupby(pd.Grouper(freq="ME"))
         for date, group in groupyear:
             monthsyear.append(np.array(group.to_numpy()))
 
